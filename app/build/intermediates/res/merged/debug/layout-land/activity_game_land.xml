@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".GameActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/OriginalPuzzle"
+        android:clickable="true"
+        android:visibility="invisible"
+        android:onClick="hidePuzzle"
+        android:background="#FF888888">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/PuzzlePic"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/LeftPanel"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="score:0"
+            android:id="@+id/score"
+            android:layout_below="@+id/newGame"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newGame"
+            android:clickable="true"
+            android:onClick="newGame"
+            android:padding="0dp"
+            android:src="@drawable/retry"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Move"
+            android:id="@+id/LastMove"
+            android:clickable="true"
+            android:onClick="lastMove"
+            android:layout_above="@+id/ShowPuzzle"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Original Picture"
+            android:id="@+id/ShowPuzzle"
+            android:clickable="true"
+            android:onClick="showPuzzle"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/LastMove"
+            android:layout_alignEnd="@+id/LastMove"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Puzzle"
+        android:clickable="false"
+        android:layout_toRightOf="@+id/LeftPanel">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tl"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/cl"
+            android:layout_toLeftOf="@+id/tc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tc"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/cc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tr"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/cr"
+            android:layout_toRightOf="@+id/tc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cl"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/cc"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cc"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cr"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/cc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bl"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/cl"
+            android:layout_toLeftOf="@+id/bc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bc"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/cc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/br"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/cr"
+            android:layout_toRightOf="@+id/bc"
+            android:clickable="true"
+            android:onClick="clickPuzzle"
+            android:padding="2dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+<!-- From: file:/Users/qiqu/Google%20Drive/s3/SSUI/P1/app/src/main/res/layout-land/activity_game_land.xml -->
